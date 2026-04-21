@@ -4,8 +4,7 @@ module shift_reg(
     output reg strobe, data_out, clk_out
 );
     //Do not modify above this line!!!
-    reg [3:0] state, next_state;
-    initial state = s0;
+
 
     parameter s0 = 0,
               s1 = 1,
@@ -23,7 +22,8 @@ module shift_reg(
               s13 = 13,
               s14 = 14,
               s15 = 15;
-
+    reg [3:0] state, next_state;
+    initial state = s0;
 
     always @(*) begin
         if(state < 15) begin
